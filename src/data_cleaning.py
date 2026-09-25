@@ -32,3 +32,19 @@ def remove_outliers_iqr(df: pd.DataFrame, columns):
         df = df[(df[col] >= lower) & (df[col] <= upper)]
     return df.reset_index(drop=True)
 
+def map_owner(df: pd.DataFrame):
+    owner_mapping = {
+        'Test Drive Car': 0,
+        'First Owner': 1,
+        'Second Owner': 2,
+        'Third Owner': 3,
+        'Fourth & Above Owner': 4
+    }
+
+    df = df.copy()
+    df['owner'] = df['owner'].map(owner_mapping)
+    return df
+
+def drop_unnecessary(df: pd.DataFrame, columns):
+    df = df.drop(columns=columns)
+    return df 

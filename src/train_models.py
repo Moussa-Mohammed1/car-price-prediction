@@ -15,7 +15,7 @@ def build_pipeline(model, numeric_cols, X_train):
         remainder='passthrough'
     )
     pipeline = Pipeline(steps=[
-        ('preprocessor', preprocessor)
+        ('preprocessor', preprocessor),
         ('model', model)
     ])
     return pipeline
