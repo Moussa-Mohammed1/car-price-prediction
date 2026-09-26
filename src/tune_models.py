@@ -5,7 +5,7 @@ from sklearn.ensemble import RandomForestRegressor
 from xgboost import XGBRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
-from train_models import build_pipeline
+from src.train_models import build_pipeline
 
 def evaluate_model(model, X_test, y_test):
     y_pred = model.predict(X_test)
