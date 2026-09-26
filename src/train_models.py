@@ -47,5 +47,5 @@ def train_all_models(X_train, y_train, X_test, y_test, numeric_cols):
         trained_models[name] = pipeline
         print(f"scores: {scores}")
         results_df = pd.DataFrame(results).T
-        return results_df, trained_models
+    return results_df, trained_models
     
